@@ -6,6 +6,7 @@ A Flutter-based personal money manager application to help you efficiently track
 ![Firebase](https://img.shields.io/badge/Firebase-Auth-orange.svg)
 ![Hive](https://img.shields.io/badge/Hive-Database-yellow.svg)
 ![Local Notifications](https://img.shields.io/badge/Flutter-Local%20Notifications-green.svg)
+![GetX](https://img.shields.io/badge/GetX-State%20Management-purple.svg)
 
 ## 📋 Features
 
@@ -20,6 +21,10 @@ A Flutter-based personal money manager application to help you efficiently track
 - **⏰ Scheduled Notifications**: Set and receive reminders for transactions using Flutter Local Notifications.
   
 - **⚙️ Settings Management**: Access the settings from the home screen to update the notification schedule time and add test transactions.
+
+## 🛠️ Architecture
+
+This application follows the **Model-View-Controller (MVC) pattern** to ensure a clean separation of concerns and maintainable code structure. The state management is handled using **GetX**, providing efficient and reactive state handling, dependency injection, and navigation within the app.
 
 ## 🚀 Getting Started
 

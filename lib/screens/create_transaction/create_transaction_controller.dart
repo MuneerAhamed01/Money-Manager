@@ -21,6 +21,10 @@ class CreateTransactionController extends GetxController {
   final TextEditingController amountController =
       TextEditingController(text: r'₹');
 
+  FocusNode titleNode = FocusNode();
+  FocusNode amountNode = FocusNode();
+  FocusNode noteNode = FocusNode();
+
   Transaction? initalTransaction;
 
   late TransactionType type;
@@ -36,6 +40,7 @@ class CreateTransactionController extends GetxController {
       amountController.text = "₹ ${initalTransaction?.amount}";
       notesController.text = initalTransaction?.note ?? '';
     }
+
     super.onInit();
   }
 
@@ -98,5 +103,17 @@ class CreateTransactionController extends GetxController {
     }
 
     Get.back(result: true);
+  }
+
+  @override
+  void onClose() {
+    titleController.dispose();
+    amountController.dispose();
+    notesController.dispose();
+    noteNode.dispose();
+    amountNode.dispose();
+    titleNode.dispose();
+
+    super.onClose();
   }
 }

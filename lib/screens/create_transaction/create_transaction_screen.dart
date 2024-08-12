@@ -60,6 +60,7 @@ class CreateTransactionScreen extends GetView<CreateTransactionController> {
             ),
             const SizedBox(height: 10),
             TextField(
+              focusNode: controller.titleNode,
               controller: controller.titleController,
               style: Get.textTheme.labelMedium
                   ?.copyWith(fontSize: 16, color: Colors.white),
@@ -76,6 +77,7 @@ class CreateTransactionScreen extends GetView<CreateTransactionController> {
               ),
             ),
             TextField(
+              focusNode: FirstDisabledFocusNode(),
               controller: controller.amountController,
               maxLines: 1,
               style: Get.textTheme.headlineLarge?.copyWith(color: Colors.white),
@@ -94,7 +96,9 @@ class CreateTransactionScreen extends GetView<CreateTransactionController> {
                 enabledBorder: _buildInputBorder(),
                 disabledBorder: _buildInputBorder(),
               ),
-              readOnly: true,
+              // readOnly: true,
+              // showCursor: true,
+              // autofocus: true,
             ),
             TextField(
               controller: controller.notesController,
@@ -195,5 +199,12 @@ class CreateTransactionScreen extends GetView<CreateTransactionController> {
   OutlineInputBorder _buildInputBorder() {
     return const OutlineInputBorder(
         borderSide: BorderSide(color: Colors.transparent));
+  }
+}
+
+class FirstDisabledFocusNode extends FocusNode {
+  @override
+  bool consumeKeyboardToken() {
+    return false;
   }
 }
