@@ -33,7 +33,7 @@ A Flutter-based personal money manager application to help you efficiently track
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/yourusername/money_manager.git
+    git clone https://github.com/MuneerAhamed01/Money-Manager.git
     cd money_manager
     ```
 
